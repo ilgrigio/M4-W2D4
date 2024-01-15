@@ -14,13 +14,11 @@ fetch(apiBooks, {
       throw response.status;
       // console.log(response);
     }
-  })
+  }) // Dopo aver ricevuto la response ciclo con .map i libri inserendoli nell'HTML
   .then((dataBooks) => {
-    console.log(dataBooks);
-
     dataBooks.map((book) => {
       container.innerHTML += `
-      <div class="card">
+      <div class="card" onclick="select(event)">
       <img
         src="${book.img}"
         class="card-img-top"
@@ -30,7 +28,7 @@ fetch(apiBooks, {
         <h5 class="card-title">${book.title}</h5>
         <h6 class="card-title">${book.category}</h6>
         <div class="flex__button">
-        <button onclick="select(event)"><ion-icon name="cart-outline"></ion-icon>${book.price.toFixed(
+        <button onclick=""><ion-icon name="cart-outline"></ion-icon>${book.price.toFixed(
           2
         )}</button>
         <button onclick="hideCard(event)">Nascondi</button>
@@ -39,8 +37,12 @@ fetch(apiBooks, {
     </div>
   </div>`;
     });
-    // container.innerHTML += data.books;
+  })
+  .catch((err) => {
+    console.error(err);
   });
+// Creo una funzione che mi permette di aggiungere e togliere la selezione alle card
+// tramite delle classi CSS
 const select = (clickEvent) => {
   const selected = document.querySelectorAll(".selected");
   selected.forEach((removeClass) => {
@@ -48,11 +50,27 @@ const select = (clickEvent) => {
   });
   clickEvent.target.closest(".card").classList.add("selected");
 };
-
+// Creo funzione per nascondere le card tramite click del bottone
 const nascondiCard = document.querySelectorAll(".hide");
 const hideCard = (hideEvent) => {
   nascondiCard.forEach((displayNone) => {
     displayNone.classList.remove("hide");
   });
   hideEvent.target.closest(".card").classList.add("hide");
+};
+
+// SearchBar
+// Funzione event per poter ricercare nella Searchbar
+//! Inserire la condizione per mostrare il risultato di ricerca dopo almeno 3 lettere
+const showTarget = (keyupEvent) => {
+  const inputs = document.querySelectorAll(".i_text");
+  for (let input of inputs) {
+    if (input.value > 3) {
+      console.log(input.value);
+    }
+    // console.log(keyupEvent.target.value);
+    else {
+      console.log("Add letter");
+    }
+  }
 };

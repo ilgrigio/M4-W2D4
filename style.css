@@ -1,3 +1,24 @@
+body {
+  box-sizing: border-box;
+  background-color: whitesmoke;
+}
+
+h1 {
+  text-align: center;
+  margin-block-end: 30px;
+  background-color: rgb(255, 159, 4);
+  color: white;
+  padding: 5px;
+}
+
+nav.navbar {
+  margin-block-end: 20px;
+}
+
+nav :nth-child(1) {
+  justify-content: flex-end !important;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +44,7 @@
 
 .card button {
   padding: 10px 15px;
-  border-radius: 30px;
+  border-radius: 10px;
   border: none;
   color: white;
   background-color: orange;
@@ -34,9 +55,9 @@
 
 .card img {
   width: 100%;
-  /* height: 340px; */
+  height: 65%;
   object-fit: cover;
-  /* aspect-ratio: 9 / 16; */
+  aspect-ratio: 9 / 16;
 }
 
 .selected {
