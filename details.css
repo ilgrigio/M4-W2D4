@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 50px;
+}
+
+.container-card img {
+  width: 350px;
+  height: 500px;
+  object-fit: cover;
+  aspect-ratio: 9 / 16;
+  border-radius: 10px;
+}
+
+.button_cart {
+  padding: 10px 8px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  width: 120px;
+  background-color: orange;
+}
+.button_cart:hover {
+  cursor: pointer;
+  color: orange;
+  background-color: black;
+}

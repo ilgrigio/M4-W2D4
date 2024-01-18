@@ -27,8 +27,8 @@ nav :nth-child(1) {
 }
 
 .card {
-  width: 20%;
-  transition: 0.3;
+  width: 250px;
+  transition: 0.3s;
   border: none;
   /* margin: 10px; */
 }
@@ -43,7 +43,7 @@ nav :nth-child(1) {
 }
 
 .card button {
-  padding: 10px 15px;
+  padding: 8px 8px;
   border-radius: 10px;
   border: none;
   color: white;
@@ -75,5 +75,12 @@ nav :nth-child(1) {
 
 .flex__button {
   display: flex;
+  justify-content: space-around;
   gap: 5px;
+  padding-block-end: 5px;
+}
+
+.flex__button a {
+  text-decoration: none;
+  color: white;
 }
